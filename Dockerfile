@@ -53,7 +53,8 @@ RUN /usr/bin/easy_install supervisor
 ADD ./supervisord.conf /etc/supervisord.conf
 
 # Phpinfo for testing purposes
-RUN echo "<?php phpinfo(); ?>" > /var/www/vhosts/laravel/public/phpinfo.php
+RUN mkdir /var/www/vhosts/site
+RUN echo "<?php phpinfo(); ?>" > /var/www/vhosts/site/phpinfo.php
 
 # Wordpress Initialization and Startup Script
 ADD ./start.sh /start.sh
